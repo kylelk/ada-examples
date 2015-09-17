@@ -1,0 +1,4 @@
+*.ali
+*.o
+.*.swp
+.DS_Store
