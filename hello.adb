@@ -1,6 +1,7 @@
-with ada.text_io; use  ada.text_io;
+with Ada.Text_IO;
+use Ada;
+
 procedure hello is
 begin
-    Put_Line("hello world");
+    Text_IO.Put_Line("hello world");
 end hello;
-
