@@ -2,3 +2,4 @@
 *.o
 .*.swp
 .DS_Store
+default-loc.xml
