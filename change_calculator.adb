@@ -28,7 +28,9 @@ procedure Change_Calculator is
             Text_IO.Put("amount: ");
             Text_IO.Flush;
             Text_IO.Get_Line(Response, Last);
+            -- try to convert string input to money type
             Amount := Money'Value(Response(1 .. Last));
+            -- quit the loop if the money converted
             exit;
          exception
             when Constraint_Error =>
@@ -49,18 +51,24 @@ begin
                       ("50 Dollar ", 50.00),
                       ("100 Dollar", 100.00));
 
+   -- read money amount from the user
    Get_Money_Prompt(Input_Amount);
 
+   -- calculate needed currency
    for I in Currency_Names'Range loop
+      -- calculate inverse of index to count backwords
       Currency_Index := (Currency_Names'Length-I)+1;
       while Input_Amount >= Currency_Names(Currency_Index).Value loop
          Input_Amount := Input_Amount - Currency_Names(Currency_Index).Value;
+         -- increment currency useage in array
          Currency_Counts(I) := Currency_Counts(I) + 1;
       end loop;
    end loop;
 
+   -- display needed currency
    for I in Currency_Counts'Range loop
       Currency_Index := (Currency_Names'Length-I)+1;
+      -- do not display unused currency
       if Currency_Counts(Currency_Index) /= 0 then
         Text_IO.Put(Currency_Names(I).Name & " ");
         Integer_Text_IO.Put(Currency_Counts(Currency_Index));
