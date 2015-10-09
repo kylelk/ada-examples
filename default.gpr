@@ -1,10 +1,10 @@
 project Default is
 
+   for Main use ("change_calculator.adb", "hello.adb");
+
    package Compiler is
       for Default_Switches ("ada") use ("-g", "-O2");
    end Compiler;
-
-   for Main use ("change_calculator.adb", "hello.adb");
 
 end Default;
 

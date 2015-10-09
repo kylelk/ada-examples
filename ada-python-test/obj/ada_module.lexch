@@ -1,0 +1,11 @@
+[LIBRARY PATH]
+/Users/kylekersey/app-tests/ada/ada-examples/ada-python-test/lib/libada_module.dylib
+[OBJECT FILES]
+/Users/kylekersey/app-tests/ada/ada-examples/ada-python-test/obj/ada_module.o
+20151009214047
+[GENERATED SOURCE FILES]
+b__ada_module.ads
+b__ada_module.adb
+b__ada_module.ali
+[GENERATED OBJECT FILES]
+b__ada_module.o
